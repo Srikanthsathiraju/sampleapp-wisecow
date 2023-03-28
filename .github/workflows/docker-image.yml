@@ -18,8 +18,8 @@ jobs:
     - name: Dockerhub login 
       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
-    - name: Build sampleapp wisecow ubuntu image 
-      run: docker build . -f Dockerfile_ubuntu -t srikanthsathiraju/sampleapp-wisecow:latest 
+    - name: Build sampleapp wisecow image 
+      run: docker build . -f Dockerfile -t srikanthsathiraju/sampleapp-wisecow:latest 
 
-    - name: Push sampleapp wisecow ubuntu image to dockerhub 
+    - name: Push sampleapp wisecow image to dockerhub 
       run: docker push srikanthsathiraju/sampleapp-wisecow:latest 
